@@ -2,14 +2,24 @@ $(document).ready(function () {
     let btnSubmit = $('#btnSubmit');
     let btnText = $('#btnText');
     let textInput = $('#textInput')
+    $('body').append('<div>');
+    // $('div').append('<h2 class="h2">');
 
     btnSubmit.click(function () {
         alert('The Almighty Button has been clicked')
     });
 
-    btnText.click(function () {
+    btnText.click(function (event) {
+        event.preventDefault();
         alert(textInput.val());
         textInput.keyup();
+        // $('h2').append(textInput.val());
+        // $('.h2').on('mouseenter', function () {
+        //     $('.h2').css({
+        //         'background-color': 'blue',
+        //         'border-radius': '5px'
+        //     })
+        // })
     });
 
     textInput.keyup(() => {
@@ -19,6 +29,4 @@ $(document).ready(function () {
             btnText.attr('disabled', false);
         }
     });
-}
-);
-
+});
