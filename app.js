@@ -1,3 +1,8 @@
-$(document).ready(function() {
+$(document).ready(function () {
+    let btnSubmit = $('#btnSubmit');
 
+    btnSubmit.click(function () {
+        alert('')
+    })
 });
+
