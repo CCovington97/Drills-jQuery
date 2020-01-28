@@ -4,7 +4,10 @@ $(document).ready(function () {
     let textInput = $('#textInput')
     $('body').append('<div>');
     $('div').append('<ul>');
-    
+    let colors = ['blue', 'green', 'red', 'yellow',
+        'purple', 'orange', 'turquoise', 'chartreuse',
+        'pink', 'gold', 'violet', 'coral']
+
     // $('body').append('<div>');
     // $('div').append('<h2 class="h2">');
 
@@ -26,7 +29,14 @@ $(document).ready(function () {
         //         'border-radius': '5px'
         //     })
         // })
+        $('li').on('click', function () {
+            $(this).css("color", colors[Math.floor(Math.random() * colors.length)]);
+        });
+        $('li').on('dblclick', function () {
+            $(this).remove();
+        });
     });
+
 
     textInput.keyup(() => {
         if (textInput.val() === "") {
