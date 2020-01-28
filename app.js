@@ -3,6 +3,9 @@ $(document).ready(function () {
     let btnText = $('#btnText');
     let textInput = $('#textInput')
     $('body').append('<div>');
+    $('div').append('<ul>');
+    
+    // $('body').append('<div>');
     // $('div').append('<h2 class="h2">');
 
     btnSubmit.click(function () {
@@ -12,7 +15,10 @@ $(document).ready(function () {
     btnText.click(function (event) {
         event.preventDefault();
         alert(textInput.val());
-        textInput.keyup();
+        let li = $('<li></li>');
+        li.append(textInput.val());
+        $('ul').append(li);
+        // textInput.keyup();
         // $('h2').append(textInput.val());
         // $('.h2').on('mouseenter', function () {
         //     $('.h2').css({
